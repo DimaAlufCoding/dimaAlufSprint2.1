@@ -123,7 +123,6 @@ function renderSavedMemes() {
     const strHTML = memes.map((memeImg, idx) => {
         return `<img src="${memeImg}" 
                 alt="Saved Meme #${idx}" 
-                style="width:200px;"
                 onclick="onLoadMemeFromGallery(${idx})"/>`
     }).join('')
 

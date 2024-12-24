@@ -155,23 +155,45 @@ function onCanvasClick(ev) {
 
 
 
+    // function getCurrentImage() {
+    //     const selectedImgId = getMeme().selectedImgId;
+
+    //     if (!selectedImgId) return;
+
+    //     const img = new Image()
+    //     img.src = gImgs.find((img) => img.id === selectedImgId).url;
+
+
+    //     return img
+    // }
+
+
+    // function onDownloadImg(elLink) {
+    //     const imgContent = gElCanvas.toDataURL('image/jpeg')
+    //     elLink.href = imgContent
+    // }
+
+
     function getCurrentImage() {
-        const selectedImgId = getMeme().selectedImgId;
-
-        if (!selectedImgId) return;
-
-        const img = new Image()
-        img.src = gImgs.find((img) => img.id === selectedImgId).url;
-
-
-        return img
+        const meme = getMeme();
+    
+        if (meme.selectedImgId) {
+            const imgData = gImgs.find((img) => img.id === meme.selectedImgId);
+            if (imgData) {
+                const img = new Image();
+                img.src = imgData.url;
+                return img;
+            }
+        }
+    
+        if (meme.selectedImgUrl) {
+            const img = new Image();
+            img.src = meme.selectedImgUrl;
+            return img;
+        }
+    
+        // If no image is selected, return undefined
+        return undefined;
     }
-
-
-    function onDownloadImg(elLink) {
-        const imgContent = gElCanvas.toDataURL('image/jpeg')
-        elLink.href = imgContent
-    }
-
 
 

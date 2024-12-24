@@ -137,10 +137,23 @@ function setFont(font) {
 
 function saveMeme(img) {
 
+    const originalText = gMeme.lines[0]?.txt; // Save the original text
+    if (gMeme.lines.length > 0) {
+        gMeme.lines[0].txt = 'Saved Meme'; // Change the first line text
+    }
+
+    const imgWithUpdatedText = gElCanvas.toDataURL("image/jpeg");
+
+    if (gMeme.lines.length > 0) {
+        gMeme.lines[0].txt = originalText;
+    }
+
+
     let memes = loadFromStorage('memes')
     if (!memes) memes = []
     memes.push(img)
     saveToStorage('memes', memes)
+    renderSavedMemes()
 
 }
 
