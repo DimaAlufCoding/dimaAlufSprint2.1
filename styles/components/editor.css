@@ -1,0 +1,9 @@
+.editor-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ddd;
+}

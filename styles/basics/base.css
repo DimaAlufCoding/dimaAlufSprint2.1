@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    color: var(--clr-primary);
+    font-family: playfair, serif;
+    line-height: 1.71428571;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.5;
+    margin: 0 0 0.8em;
+}
+
+body {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}

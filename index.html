@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="initCanvas()">
+    <main class="main-layout">
+        <header>
+            <h1>Ultimate Meme Generator</h1>
+        </header>
+        <section id="gallery"></section>
+        <canvas id="meme-canvas"></canvas>
+        <div class="editor-box" id="editor">
+            <div class="controls-row">
+                <select id="font-family" onchange="onChnageFont(this.value)">
+                    <option value="" id="placeholder" disabled selected>Select Font</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                </select>
+                <input class="color-picker" type="color" id="color-picker" value="#FFFFFF">
+
+                <button id="increase-font-btn" onclick="onChangeFontSize(2)">+</button>
+                <input class="text-input" type="text" id="meme-text" placeholder="Enter meme text">
+                <button id="decrease-font-btn" onclick="onChangeFontSize(-2)">-</button>
+
+            </div>
+            <div class="text-position">
+                <button id="align-left" onclick="onAlignText('100')">Align left</button>
+                <button id="align-center" onclick="onAlignText('250')">Align center</button>
+                <button id="align-right" onclick="onAlignText('400')">Align right</button>
+                <button id="add-line" onclick="onAddLine()">Add line</button>
+                <button id="delete-line" onclick="onRemoveLine()">Delete line</button>
+                <button id="switch-line" onclick="onSwitchLine()">Switch line</button>
+            </div>
+            <div class="save-download">
+            <button class="btn" onclick="onSave()">Save</button>
+            <button class="btn"><a href="#" class="btn" onclick="onDownloadImg(this)"
+                    download="my-img.jpg">Download</a></button>
+            </div>
+        </div>
+
+        <div class="meme-box" id="meme-box">
+            <h2>My Memes</h2>
+            <div id="meme-gallery"></div>
+        </div>
+        <footer class="footer">This is a footer</footer>
+
+    </main>
+
+
+    <script src="js/controller/galleryController.js"></script>
+    <script src="js/controller/memeController.js"></script>
+    <script src="js/services/galleryService.js"></script>
+    <script src="js/services/memeService.js"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
