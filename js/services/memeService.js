@@ -151,7 +151,7 @@ function saveMeme(img) {
 
     let memes = loadFromStorage('memes')
     if (!memes) memes = []
-    memes.push(img)
+    memes.push(imgWithUpdatedText)
     saveToStorage('memes', memes)
     renderSavedMemes()
 

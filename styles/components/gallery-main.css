@@ -1,0 +1,19 @@
+#gallery {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    display: flex;
+    gap: 5px;
+    object-fit: cover;
+    align-items: center;     
+    overflow: auto;
+    border-radius: 4px;
+
+    width: 100%;  
+    align-self: start;  
+    border: 1px solid #ddd;
+    
+
+
+
+    box-sizing: border-box;
+}

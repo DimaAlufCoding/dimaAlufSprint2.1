@@ -1,27 +1,73 @@
+/* BASICS */
+@import url('/styles/basics/base.css');
+@import url('/styles/basics/helpers.css');
+@import url('/styles/basics/layout.css');
+
+/* COMPONENTS */
+@import url('/styles/components/header-main.css');
+@import url('/styles/components/gallery-main.css');
+@import url('/styles/components/canvas.css');
+@import url('/styles/components/editor.css');
+@import url('/styles/components/footer-main.css');
+@import url('/styles/components/meme-gallery.css');
+@import url('/styles/components/footer.css');
+
+
+/* MQ */
+
+@import url('/styles/setup/mq.css');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------------------- General Layout ---------------------- */
 
 /* Main grid layout */
-.main-layout {
+/* .main-layout {
     display: grid;
     position: fixed;
     gap: 10px;
     grid-template-columns: 1fr minmax(500px, 1fr) minmax(500px, 1fr) 1fr;
     grid-template-rows: 80px 60px 160px 340px 40px; 
     align-items: center;
-    /* width: 100%; */
     height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     gap: 10px;
-}
+} */
+/* Done */
+/* BASICS */
 
 /* ---------------------- Header ---------------------- */
 
-header {
+
+/* header {
     grid-column: 2 / 4;
     grid-row: 1;
-    background-color: #333; /* Dark gray instead of pure black */
+    background-color: #333; 
     color: white;
     display: flex;
     align-items: center;
@@ -35,11 +81,11 @@ header h1 {
     font-size: 24px;
     margin: 0;
     padding: 10px;
-}
+} */
 
 /* ---------------------- Gallery ---------------------- */
 
-#gallery {
+/* #gallery {
     grid-column: 2 / 4;
     grid-row: 2;
     display: flex;
@@ -57,11 +103,11 @@ header h1 {
 
 
     box-sizing: border-box;
-}
+} */
 
 /* ---------------------- Canvas ---------------------- */
 
-canvas {
+/* canvas {
     display: flex;
     flex-direction: column;
     grid-column: 2;
@@ -75,33 +121,30 @@ canvas {
     width: 100%;
     
    
-}
+} */
 
 /* ---------------------- Editor Box ---------------------- */
 
-.editor-box {
+/* .editor-box {
     grid-column: 3;
     grid-row: 3;
     width: 500px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #fafafa; /* Light background */
+    background-color: #fafafa; 
     display: flex;
     flex-direction: column;
-    
-    /* align-self: stretch; */
-
-    
+        
     padding: 10px;
     box-sizing: border-box;
     gap: 5px; 
-}
+} */
 
 /* ---------------------- Buttons ---------------------- */
 
-button {
+/* button {
     border-radius: 4px;
-    background-color: #5eb394; /* A moderate green/teal */
+    background-color: #5eb394; 
     border: none;
     color: white;
     padding: 4px 16px;
@@ -110,24 +153,24 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: Arial, sans-serif;
-    margin-right: 5px; /* Small spacing between inline buttons */
-}
+    margin-right: 5px; 
+} */
 
 /* Button hover effect */
-button:hover {
+/* button:hover {
     background-color: #499278;
-}
+} */
 
 /* If you have <a> inside a button, remove default link styling */
-button a {
+/* button a {
     color: white;
     text-decoration: none;
     display: inline-block;
-}
+} */
 
 /* ---------------------- Inputs ---------------------- */
 
-.color-picker {
+/* .color-picker {
     width: 30px;
     height: 30px;
     padding: 0;
@@ -135,10 +178,10 @@ button a {
     cursor: pointer;
     margin-left: 5px;
     margin-right: 5px;
-}
+} */
 
 /* Styling the text input */
-.text-input {
+/* .text-input {
     width: 200px;
     padding: 8px;
     font-size: 14px;
@@ -148,10 +191,10 @@ button a {
     background-color: #fff;
     box-sizing: border-box;
     margin-right: 5px;
-}
+} */
 
 /* Dropdown (select) styling */
-#font-family {
+/* #font-family {
     padding: 6px;
     font-size: 14px;
     border-radius: 4px;
@@ -159,13 +202,13 @@ button a {
     background-color: #fff;
     cursor: pointer;
     font-family: Arial, sans-serif;
-}
+} */
 
 /* ---------------------- Footer ---------------------- */
 
-.footer {
+/* .footer {
     grid-column: 2 / 4;
-    grid-row: 5; /* or 4, depending on how you want it arranged */
+    grid-row: 5; 
     text-align: center;
     background-color: #333;
     color: white;
@@ -174,54 +217,54 @@ button a {
     font-family: Arial, sans-serif;
     font-size: 14px;
     align-self: end;
-}
+} */
 
 
-.text-position{
+/* .text-position{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-}
+} */
 
-.controls-row{
+/* .controls-row{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-}
+} */
 
-.save-download{
+/* .save-download{
     display: grid;
     justify-content: normal;
     align-items: center;
     gap: 5px;
-}
+} */
 
 /* Ensuring everything inside the main-layout doesn’t overflow accidentally */
-body, html {
+/* body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
-}
+} */
 
 
 
-.meme-box{
+/* .meme-box{
     grid-column: 3;
     grid-row: 4;
     width: 500px;
     align-self: stretch;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #fafafa; /* Light background */
+    background-color: #fafafa; 
     display: flex;
     flex-direction: column;
     
     padding: 10px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    box-shadow: 0 0 8px rgba(0,0,0,0.1); 
     box-sizing: border-box;
     gap: 5px; 
 }
@@ -247,18 +290,14 @@ body, html {
     max-width: 100%;
     max-height: 100%;
     display: block;
-}
+} */
 
 /* SETUP */
 
 
-/* BASICS */
-@import url('/styles/basics/base.css');
-@import url('/styles/basics/helpers.css');
-@import url('/styles/basics/layout.css');
 
 
-/* COMPONENTS */
-@import url('/styles/components/editor.css');
+
+
 
 /* MQ */

@@ -1,0 +1,14 @@
+.footer {
+    grid-column: 2 / 4;
+    grid-row: 5 / 5; 
+    height: 100%;
+    align-content: center;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    align-self: end;
+}

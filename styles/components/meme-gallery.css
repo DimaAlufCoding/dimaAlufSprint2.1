@@ -1,0 +1,39 @@
+.meme-box{
+    grid-column: 3;
+    grid-row: 4;
+    width: 500px;
+    align-self: stretch;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fafafa; /* Light background */
+    display: flex;
+    flex-direction: column;
+    
+    padding: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    box-sizing: border-box;
+    gap: 5px; 
+}
+
+
+
+.meme-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 5px;
+    justify-content: center; 
+    align-items: center;     
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: scroll;}
+
+.meme-gallery img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}

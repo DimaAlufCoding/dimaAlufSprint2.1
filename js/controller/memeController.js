@@ -73,6 +73,7 @@ function onAddLine() {
 function onSwitchLine() {
     const meme = getMeme()
     meme.selectedLineIdx++
+    
 
     if (meme.selectedLineIdx >= meme.lines.length) {
         meme.selectedLineIdx = 0

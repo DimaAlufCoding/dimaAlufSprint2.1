@@ -1,0 +1,18 @@
+header {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    background-color: #333; /* Dark gray instead of pure black */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    height: 100%;
+}
+
+header h1 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin: 0;
+    padding: 10px;
+}

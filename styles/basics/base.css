@@ -3,25 +3,13 @@
 }
 
 
-html {
-    color: var(--clr-primary);
-    font-family: playfair, serif;
-    line-height: 1.71428571;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    line-height: 1.5;
-    margin: 0 0 0.8em;
-}
-
-body {
-    font-size: 0.875rem;
+body, html {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
 }
 
 img {

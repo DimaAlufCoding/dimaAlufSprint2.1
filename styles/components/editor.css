@@ -1,9 +1,91 @@
 .editor-box {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    border: 1px solid black;
+    grid-column: 3;
+    grid-row: 3;
     width: 500px;
-    height: 500px;
     border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fafafa; 
+    display: flex;
+    flex-direction: column;
+        
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 5px; 
+}
+
+
+button {
+    border-radius: 4px;
+    background-color: #5eb394; 
+    border: none;
+    color: white;
+    padding: 4px 16px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
+    margin-right: 5px; 
+}
+
+
+
+button:hover {
+    background-color: #499278;
+}
+
+
+button a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+.color-picker {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+
+.text-input {
+    width: 200px;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+
+
+.text-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.save-download{
+    display: grid;
+    justify-content: normal;
+    align-items: center;
+    gap: 5px;
 }
