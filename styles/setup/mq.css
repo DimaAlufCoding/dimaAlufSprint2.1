@@ -6,12 +6,13 @@
             1fr minmax(500px, 1fr) minmax(500px, 1fr) 1fr;
 
         grid-template-rows:
-            40px auto min-content 1fr 40px;
+            40px min-content min-content min-content 40px;
     }
 
     header {
         grid-column: 2 / 4;
         grid-row: 1;
+
     }
 
     canvas {
@@ -22,6 +23,7 @@
     .meme-box {
         grid-column: 3;
         grid-row: 4;
+        
     }
 
     .meme-gallery {
@@ -51,11 +53,14 @@
 
         grid-template-rows:
             40px 50px min-content 1fr 40px;
+            overflow: scroll;
     }
 
     header {
         grid-column: 2 / 4;
-        grid-row: 1;
+        /* grid-row: 1; */
+        justify-content: space-between;
+        font-size: 0.5rem;
     }
 
     canvas {
@@ -143,6 +148,10 @@
         gap: 5px;
     }
 
+    .gallery-btn {
+        width: 20%;
+    }
+
 }
 
 
@@ -156,12 +165,12 @@
 
         grid-template-rows:
             40px 50px min-content 1fr 1fr 40px;
+
+            overflow: scroll;
         
     }
 
-    body {
-        overflow: scroll;
-    }
+   
 
     header {
         grid-column: 2 / 2;
@@ -195,7 +204,7 @@
 
 
     .footer {
-        display: none;
+        /* display: none; */
         grid-column: 2;
         grid-row: 6/7;
 

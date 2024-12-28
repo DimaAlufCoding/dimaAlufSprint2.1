@@ -1,14 +1,11 @@
 .meme-box{
-    grid-column: 3;
-    grid-row: 4;
     width: 500px;
-    align-self: stretch;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #fafafa; /* Light background */
+    background-color: #fafafa; 
     display: flex;
     flex-direction: column;
-    
+    align-self: stretch;
     padding: 10px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1); /* Subtle shadow */
     box-sizing: border-box;
