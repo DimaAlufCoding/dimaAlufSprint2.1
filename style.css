@@ -1,18 +1,18 @@
 /* BASICS */
-@import url('/styles/basics/base.css');
-@import url('/styles/basics/helpers.css');
-@import url('/styles/basics/layout.css');
+@import url('styles/basics/base.css');
+@import url('styles/basics/helpers.css');
+@import url('styles/basics/layout.css');
 
 /* COMPONENTS */
-@import url('/styles/components/header-main.css');
-@import url('/styles/components/gallery-main.css');
-@import url('/styles/components/canvas.css');
-@import url('/styles/components/editor.css');
-@import url('/styles/components/meme-gallery.css');
-@import url('/styles/components/footer.css');
-@import url('/styles/big-gallery/gallery-page.css');
+@import url('styles/components/header-main.css');
+@import url('styles/components/gallery-main.css');
+@import url('styles/components/canvas.css');
+@import url('styles/components/editor.css');
+@import url('styles/components/meme-gallery.css');
+@import url('styles/components/footer.css');
+@import url('styles/big-gallery/gallery-page.css');
 
 
 /* MQ */
 
-@import url('/styles/setup/mq.css');
+@import url('styles/setup/mq.css');
