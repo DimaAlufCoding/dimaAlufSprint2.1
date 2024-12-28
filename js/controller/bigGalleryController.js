@@ -16,7 +16,8 @@ var gImgs = [
     { id: 15, url: "assets/15.jpg", keywords: ["mountain", "adventure"] },
     { id: 16, url: "assets/16.jpg", keywords: ["mountain", "adventure"] },
     { id: 17, url: "assets/17.jpg", keywords: ["mountain", "adventure"] },
-    { id: 18, url: "assets/18.jpg", keywords: ["mountain", "adventure"] }
+    { id: 18, url: "assets/18.jpg", keywords: ["mountain", "adventure"] },
+    { id: 19, url: "assets/19.jpg", keywords: ["mountain", "adventure"] }
 ]
 
 
