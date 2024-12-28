@@ -23,20 +23,22 @@ var gImgs = [
 
 
 
+
+function renderBigGalleryImg() {
+    renderImages()
+}
+
+
+
 function renderImages() {
-    const rowContainer = document.querySelector("#gallery")
-    rowContainer.innerHTML = ""
+    const rowContainer = document.querySelector("#big-gallery")
+    rowContainer.innerHTML = "" 
 
     gImgs.forEach((img) => {
-        const column = document.createElement("div")
-        column.classList.add("column")
-
         const image = document.createElement("img")
-        image.classList.add("demo", "cursor")
+        image.classList.add("image-gallery")
         image.src = img.url
         image.alt = img.keywords.join(", ")
-        image.style.width = "50px"
-        image.style.height = "50px"
         image.style.objectFit = "cover"
 
         image.onclick = () => {
@@ -44,29 +46,6 @@ function renderImages() {
             setImg(img.id)
         }
 
-        column.appendChild(image)
-        rowContainer.appendChild(column)
-    })
-}
-
-
-function getCurrentImage() {
-    const meme = getMeme();
-
-    if (meme.selectedImgId) {
-        const imgData = gImgs.find((img) => img.id === meme.selectedImgId)
-        if (imgData) {
-            const img = new Image()
-            img.src = imgData.url
-            return img
-        }
-    }
-
-    if (meme.selectedImgUrl) {
-        const img = new Image()
-        img.src = meme.selectedImgUrl
-        return img;
-    }
-
-    return undefined;
+        rowContainer.appendChild(image)
+    });
 }

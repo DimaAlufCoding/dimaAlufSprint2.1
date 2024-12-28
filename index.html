@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="initCanvas()">
+<body>
     <main class="main-layout align-center">
         <header>
+            <div class="logo">
             <h1>Ultimate Meme Generator</h1>
+        </div>
+            <button class="gellery-btn" onclick="onNavigateToGallery()">Gallery</button>
+        
         </header>
-        <section id="gallery"></section>
+        <section class="gallery" id="gallery"></section>
         <canvas id="meme-canvas"></canvas>
         <div class="editor-box" id="editor">
             <div class="controls-row">
@@ -33,17 +37,27 @@
 
             </div>
             <div class="text-position">
-                <button id="align-left" onclick="onAlignText('100')">Align left</button>
-                <button id="align-center" onclick="onAlignText('250')">Align center</button>
-                <button id="align-right" onclick="onAlignText('400')">Align right</button>
+                <button class="pos" id="align-left" onclick="onAlignText('100')">Align left</button>
+                <button class="pos" id="align-center" onclick="onAlignText('250')">Align center</button>
+                <button class="pos" id="align-right" onclick="onAlignText('400')">Align right</button>
+
+
+
                 <button id="add-line" onclick="onAddLine()">Add line</button>
                 <button id="delete-line" onclick="onRemoveLine()">Delete line</button>
                 <button id="switch-line" onclick="onSwitchLine()">Switch line</button>
             </div>
+            <div class="move-text-controler">
+                <button id="move-right" onclick="onMoveText(5, 'x')">Right</button>
+                <button id="move-up" onclick="onMoveText(-5, 'y')">Up</button>
+                <button id="move-down" onclick="onMoveText(5, 'y')">Down</button>
+                <button id="move-left" onclick="onMoveText(-5, 'x')">Left</button>
+            </div>
             <div class="save-download">
-            <button class="btn" onclick="onSave()">Save</button>
-            <button class="btn"><a href="#" class="btn" onclick="onDownloadImg(this)"
-                    download="my-img.jpg">Download</a></button>
+
+                <button class="btn save" onclick="onSave()">Save</button>
+                <button class="btn download"><a href="#" class="btn" onclick="onDownloadImg(this)"
+                        download="img.jpg">Download</a></button>
             </div>
         </div>
 
@@ -51,15 +65,17 @@
             <h2>My Memes</h2>
             <div class="meme-gallery" id="meme-gallery"></div>
         </div>
-        <footer class="footer">This is a footer</footer>
+        <footer class="footer">© 2024 Dima Aluf. All rights reserved</footer>
 
     </main>
-
-
     <script src="js/controller/galleryController.js"></script>
     <script src="js/controller/memeController.js"></script>
     <script src="js/services/galleryService.js"></script>
     <script src="js/services/memeService.js"></script>
+    <script src="js/services/eventService.js"></script>
+    <script src="js/services/storageService.js"></script>
+
+
 
     <script src="main.js"></script>
 </body>

@@ -4,19 +4,19 @@
     width: 500px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #fafafa; 
+    background-color: #fafafa;
     display: flex;
     flex-direction: column;
-        
+
     padding: 10px;
     box-sizing: border-box;
-    gap: 5px; 
+    gap: 5px;
 }
 
 
 button {
     border-radius: 4px;
-    background-color: #5eb394; 
+    background-color: #5eb394;
     border: none;
     color: white;
     padding: 4px 16px;
@@ -25,13 +25,13 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: Arial, sans-serif;
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 
 
 
 button:hover {
-    background-color: #499278;
+    background-color: #cdddd7;
 }
 
 
@@ -68,14 +68,14 @@ button a {
 }
 
 
-.text-position{
+.text-position {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.controls-row{
+.controls-row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,9 +83,46 @@ button a {
 }
 
 
-.save-download{
+.save-download {
     display: grid;
     justify-content: normal;
     align-items: center;
     gap: 5px;
+}
+
+.move-text-controler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Buttons */
+#decrease-font-btn {
+    background-color: #f44336;
+}
+
+#move-down {
+    background-color: #f44336;
+}
+
+#delete-line{
+    background-color: #f44336;
+}
+
+#switch-line{
+    background-color: #008CBA;
+}
+
+.pos{
+    background-color: #786d6d;
+}
+
+
+.download{
+    background-color: #b4ba00;
+}
+
+.save{
+    background-color: #c39a58;
 }

@@ -2,12 +2,33 @@ let gMeme = {
     selectedImgId: null,
     selectedLineIdx: 0,
     lines: [
-        { txt: 'Default text', size: 40, color: '#FFFFFF', x: 250, y: 80 }
+        { txt: 'Enter meme text', size: 40, color: '#FFFFFF', x: 250, y: 80 }
     ]
 }
 
 function getMeme() {
     return gMeme
+}
+
+function renderMeme(img) {
+    if (!gElCanvas) initCanvas()
+    clearCanvas()
+    if (!img) return
+    const meme = getMeme()
+    const imgRatio = img.naturalWidth / img.naturalHeight
+    let renderWidth = CANVAS_WIDTH
+    let renderHeight = CANVAS_HEIGHT
+    if (imgRatio > 1) {
+        renderHeight = CANVAS_WIDTH / imgRatio
+    } else {
+        renderWidth = CANVAS_HEIGHT * imgRatio
+    }
+    const offsetX = (CANVAS_WIDTH - renderWidth) / 2
+    const offsetY = (CANVAS_HEIGHT - renderHeight) / 2
+    gCtx.drawImage(img, offsetX, offsetY, renderWidth, renderHeight)
+    const centerX = CANVAS_WIDTH / 2
+    const centerY = CANVAS_HEIGHT / 2
+    setText(meme, centerX, centerY)
 }
 
 function setLineTxt(txt) {
@@ -64,12 +85,10 @@ function addLine() {
         y: newY
     }
     gMeme.lines.push(newLine)
-
     gMeme.selectedLineIdx = gMeme.lines.length - 1
-    renderMeme(getCurrentImage())
+    
 
 }
-
 
 
 function setText(meme) {
@@ -81,13 +100,8 @@ function setText(meme) {
         gCtx.font = `${line.size}px ${fontFamily}`
         gCtx.fillStyle = line.color
         gCtx.textAlign = "center"
-        // gCtx.strokeStyle = "red"
         gCtx.lineWidth = 2
-
         gCtx.fillText(line.txt, line.x, line.y)
-        // gCtx.strokeText(line.txt, line.x, line.y)
-
-
         if (idx === meme.selectedLineIdx) {
             const textWidth = gCtx.measureText(line.txt).width
             const textHeight = line.size
@@ -115,8 +129,10 @@ function setText(meme) {
 
 
 function removeLine() {
-    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
-    gMeme.selectedLineIdx = 0
+    const selectedLineIdx = gMeme.selectedLineIdx
+    if (gMeme.lines[selectedLineIdx]) {
+        gMeme.lines.splice(selectedLineIdx, 1)
+    }    
 }
 
 
@@ -127,6 +143,20 @@ function setLineAlign(align) {
     }
 }
 
+function setLinePositionX(align) {
+    const selectedLineIdx = gMeme.selectedLineIdx
+    if (gMeme.lines[selectedLineIdx]) {
+        gMeme.lines[selectedLineIdx].x += align
+    }
+}
+function setLinePositionY(align) {
+    const selectedLineIdx = gMeme.selectedLineIdx
+    if (gMeme.lines[selectedLineIdx]) {
+        gMeme.lines[selectedLineIdx].y += align
+    }
+}
+
+
 function setFont(font) {
     const selectedLineIdx = gMeme.selectedLineIdx
     if (gMeme.lines[selectedLineIdx]) {
@@ -135,19 +165,16 @@ function setFont(font) {
 }
 
 
-function saveMeme(img) {
-
-    const originalText = gMeme.lines[0]?.txt; // Save the original text
+function saveMeme() {
+    const originalText = gMeme.lines[0]?.txt
     if (gMeme.lines.length > 0) {
-        gMeme.lines[0].txt = 'Saved Meme'; // Change the first line text
+        gMeme.lines[0].txt = 'Saved Meme'
     }
-
     const imgWithUpdatedText = gElCanvas.toDataURL("image/jpeg");
 
     if (gMeme.lines.length > 0) {
-        gMeme.lines[0].txt = originalText;
+        gMeme.lines[0].txt = originalText
     }
-
 
     let memes = loadFromStorage('memes')
     if (!memes) memes = []
@@ -158,18 +185,14 @@ function saveMeme(img) {
 }
 
 
-
-
-
-function saveToStorage(key, value) {
-    localStorage.setItem(key, JSON.stringify(value))
-
+function clearCanvas() {
+    if (!gCtx) return
+    gCtx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
 }
 
-function loadFromStorage(key) {
-    const val = localStorage.getItem(key)
-    return val ? JSON.parse(val) : null
-}
+
+
+
 
 
 

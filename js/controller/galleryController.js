@@ -6,27 +6,21 @@ function onImgInput(ev) {
     loadImageFromInput(ev, renderMeme)
 }
 
-function loadImageFromInput(ev, onImageReady) {
-    // document.querySelector('.share-container').innerHTML = ''
-    const reader = new FileReader()
+function renderSavedMemes() {
+    const memes = loadFromStorage('memes') || []
+    const elMemeGallery = document.querySelector('#meme-gallery')
 
-    reader.onload = function (event) {
-        const img = new Image()
-        img.onload = () => onImageReady(img)
-        img.src = event.target.result
+    if (!memes.length) {
+        elMemeGallery.innerHTML = '<p>No memes saved yet.</p>'
+        return
     }
-    reader.readAsDataURL(ev.target.files[0])
-}
+    const strHTML = memes.map((memeImg, idx) => {
+        return `<img src="${memeImg}" 
+                alt="Saved Meme #${idx}" 
+                onclick="onLoadMemeFromGallery(${idx})"/>`
+    }).join('')
 
-function currentImg(currImg) {
-    if (!currImg) return;
-
-    const img = new Image()
-
-    img.src = currImg
-    img.onload = () => {
-        renderMeme(img)
-    }
+    elMemeGallery.innerHTML = strHTML
 }
 
 
@@ -46,3 +40,6 @@ function onLoadMemeFromGallery(idx) {
     }
     
 }
+
+
+
